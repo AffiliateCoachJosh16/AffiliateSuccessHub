@@ -1,123 +1,128 @@
-body{ margin:0;
-    min-height: 100vh;
+/* =========================================
+   AFFILIATE SUCCESS HUB
+   RESPONSIVE GLOBAL STYLES
+   ========================================= */
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 
     background: linear-gradient(
         135deg,
         #16002b,
         #36006b,
-        #09001a);
+        #09001a
+    );
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;}
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-    img{
-        width: 220px;
-        height: 220px;
+/* =========================================
+   GENERAL CONTAINER
+   ========================================= */
 
-        border-radius: 50%;
-
-        object-fit:cover;
-
-        box-shadow:
-            0 0 20px #9b4dff,
-            0 0 50px #6a00ff,
-            0 0 90px rgba(155, 77, 255, 0.5);}
-
-        .container {
-            text-align: center;
-            max-width: 600px;
-            padding: 20px}
-        
-        h1{
-            color: white;
-            font-size: 32px;
-            margin-top: 30px;
-            margin-bottom: 15px;}
-            
-        p{
-            color: #dddddd;
-            font--size: 17px;
-            line-height: 1.6;
-            margin-bottom: 30px;}
-
-        button{
-            background:
-        linear-gradient(135deg, #9b4dff, #6a00ff);
-        color: white;
-        border: none;
-        padding: 15px 35px;
-        border-radius: 30px;
-        font-size: 16px;
-        font-weight:bold;
-        cursor: pointer;
-
-        box-shadow: 0 0 20px rgba(155, 77, 255, 0.6):}
-    button: hover{
-        transform: scale(1.05);}
-    .skills {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 30px;
-    }
-    .skill-card {background: rgba(255, 255, 255, 0.1):
-        padding:25px;
-        border-radius:20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .skill-card h2{
-        color: white;
-        margin-top: 0;
-    }
-    .skill-card p{
-        color: #dddddd;
-    }
-    .skill-card p{{
-        margin-top: 10px;
-    }}
-
-/*Skills page */
-.skills {
-    display: grid;
-    grid-template-columns: repeat (3,1fr):
-    gap: 25px;
+.container {
+    width: 100%;
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
-.skill-card {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    min-height: 180px;
-    box-sizing: border-box;
+/* =========================================
+   IMAGES / LOGOS
+   ========================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.skill-card h2{
-    margin-bottom: 15px;
-    font-size: 22px;
+.container > img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    box-shadow:
+        0 0 20px #9b4dff,
+        0 0 50px #6a00ff,
+        0 0 90px rgba(155, 77, 255, 0.5);
 }
 
-.skill-card p{
+/* =========================================
+   HEADINGS & TEXT
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    color: white;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 30px 0 15px;
+}
+
+p {
+    color: #dddddd;
+    font-size: 17px;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* Phones */
-@media (max-width: 768px) {.skills{grid-template-columns: 1fr; padding: 15px;}}
+/* =========================================
+   BUTTONS
+   ========================================= */
 
-/* SKILLS PAGE */
+button {
+    background: linear-gradient(
+        135deg,
+        #9b4dff,
+        #6a00ff
+    );
+
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(155, 77, 255, 0.6);
+
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   SKILLS PAGE
+   ========================================= */
 
 .skills-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.skills-header  img{
+.skills-header img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
@@ -125,103 +130,136 @@ body{ margin:0;
     margin-bottom: 15px;
 }
 
-.skills-header h1{
+.skills-header h1 {
     font-size: 40px;
     margin: 10px 0;
 }
 
-.skills-header p{
+.skills-header p {
     font-size: 18px;
     margin: 0;
 }
+
+/* Skills grid */
 
 .skills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+
+    width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+
+    margin: 40px auto;
     padding: 20px;
 }
 
+/* Skill cards */
+
 .skill-card {
+    width: 100%;
+
     background: rgba(255, 255, 255, 0.12);
+
     padding: 25px;
     border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
     text-align: center;
-    box-sizing: border-box;
+
+    min-height: 180px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.16);
 }
 
 .skill-card h2 {
+    color: white;
     margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 22px;
 }
 
-.skill-card p{
-    line-height: 1.5;
+.skill-card p {
+    color: #dddddd;
+    line-height: 1.6;
 }
 
-.skill-card button{
+.skill-card button {
     padding: 10px 25px;
-    border: none;
     border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
 }
 
-/* PHONE */
-@media (max-width: 768px) {
-    .skills {
-        grid-template-columns: 1fr;
-    }
-    skills-header h1 {
-        font-size: 32px
-    }
-}
+/* =========================================
+   REGISTER BUTTON
+   ========================================= */
 
 .register-btn {
     display: inline-block;
-    background:
-linear-gradient(135deg, #9b4dff, #6a00ff);
-    color: white;
-    text-decoration: none;
-    padding: 10px, 25px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
 
-.register-btn {
-    display: inline-block;
     padding: 11px 28px;
-    background: linear-gradient(135deg, #9b4dff, #6a00ff);
+
+    background: linear-gradient(
+        135deg,
+        #9b4dff,
+        #6a00ff
+    );
+
     color: white;
+
     text-decoration: none;
+
     border-radius: 25px;
+
     font-weight: bold;
     font-size: 15px;
+
     box-sizing: border-box;
+
+    transition: transform 0.2s ease;
 }
 
 .register-btn:hover {
     transform: scale(1.05);
 }
 
+/* =========================================
+   REGISTRATION PAGE
+   ========================================= */
+
 .register-container {
     width: 90%;
     max-width: 500px;
+
     margin: 40px auto;
     padding: 30px;
+
     background: rgba(255, 255, 255, 0.1);
+
     border-radius: 20px;
-    box-sizing: border-box;
-    text-align: center;
+
+    text-align: center;box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
 }
 
 .register-container img {
     width: 140px;
     height: 140px;
+
     border-radius: 50%;
+
     object-fit: cover;
+
     margin-bottom: 20px;
 }
 
@@ -232,43 +270,269 @@ linear-gradient(135deg, #9b4dff, #6a00ff);
 .register-container form {
     display: flex;
     flex-direction: column;
+
     text-align: left;
+
     margin-top: 25px;
 }
 
 .register-container label {
     color: white;
+
     font-weight: bold;
+
     margin-bottom: 7px;
 }
 
 .register-container input,
 .register-container select {
     width: 100%;
+
     padding: 13px;
+
     margin-bottom: 18px;
+
     border: none;
+
     border-radius: 10px;
-    box-sizing: border-box;
+
     font-size: 15px;
+
+    box-sizing: border-box;
+
+    outline: none;
+}
+
+.register-container input:focus,
+.register-container select:focus {
+    box-shadow:
+        0 0 0 2px #9b4dff;
 }
 
 .register-container form button {
     width: 100%;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 25px;
-    background: linear-gradient(135deg, #9b4dff, #6a00ff);
+
+    background: linear-gradient(
+        135deg,
+        #9b4dff,
+        #6a00ff
+    );
+
     color: white;
+
     font-weight: bold;
+
     font-size: 16px;
+
     cursor: pointer;
-    box-sizing: border-box;
 }
+
+.register-container small {
+    display: block;
+
+    margin-top: -12px;
+    margin-bottom: 18px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    opacity: 0.75;
+}
+
+/* =========================================
+   SUCCESS PAGE
+   ========================================= */
+
+.success-container {
+    width: 90%;
+    max-width: 550px;
+
+    margin: 80px auto;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.success-container img {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 10px auto 20px;
+
+    border-radius: 50%;
+
+    background: #20c997;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.success-container h1 {
+    margin-bottom: 15px;
+}
+
+.success-container p {
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.registration-details {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    text-align: left;
+}
+
+.registration-details p {
+    margin: 10px 0;
+}
+
+/* =========================================
+   PAYMENT
+   ========================================= */
+
+.payment-card {
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    text-align: left;
+}
+
+.payment-card p {
+    margin: 12px 0;
+}
+
+.payment-btn {
+    display: inline-block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #9b4dff,
+        #6a00ff
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    border: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.account-number {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 8px 0 20px;
+}
+
+.account-number span {
+    flex: 1;
+
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.account-number button {
+    padding: 12px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #6a00ff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.payment-note {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    opacity: 0.8;
+}
+
+/* =========================================
+   FOUNDER
+   ========================================= */
 
 .founder {
     text-align: center;
+
     margin-top: 60px;
+
     padding: 30px 20px;
 }
 
@@ -278,6 +542,7 @@ linear-gradient(135deg, #9b4dff, #6a00ff);
 
 .founder p {
     margin: 0;
+
     font-size: 16px;
 }
 
@@ -285,10 +550,15 @@ linear-gradient(135deg, #9b4dff, #6a00ff);
     font-weight: bold;
 }
 
-footer {
+/* =========================================
+   FOOTER
+   ========================================= */footer {
     text-align: center;
+
     padding: 25px 15px;
+
     margin-top: 50px;
+
     font-size: 15px;
 }
 
@@ -300,21 +570,30 @@ footer strong {
     font-weight: bold;
 }
 
-/* PROFESSIONAL FOOTER */
-
 .site-footer {
+    width: 100%;
+
     background: rgba(0, 0, 0, 0.35);
+
     margin-top: 70px;
+
     padding: 45px 30px 20px;
+
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-content {
+    width: 100%;
     max-width: 1100px;
+
     margin: 0 auto;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 40px;
 }
 
@@ -325,18 +604,23 @@ footer strong {
 .footer-brand img {
     width: 65px;
     height: 65px;
+
     border-radius: 50%;
+
     object-fit: cover;
+
     margin-bottom: 10px;
 }
 
 .footer-brand h2 {
     margin: 5px 0;
+
     font-size: 22px;
 }
 
 .footer-brand p {
     margin: 5px 0;
+
     opacity: 0.8;
 }
 
@@ -350,6 +634,7 @@ footer strong {
 
 .footer-founder p {
     margin: 0;
+
     opacity: 0.9;
 }
 
@@ -358,22 +643,192 @@ footer strong {
 }
 
 .footer-bottom {
+    width: 100%;
     max-width: 1100px;
+
     margin: 35px auto 0;
+
     padding-top: 18px;
+
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+
     text-align: center;
+
     font-size: 13px;
+
     opacity: 0.7;
 }
 
-
-/* MOBILE FOOTER */
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
 
 @media (max-width: 768px) {
 
+    body {
+        min-height: 100vh;
+
+        padding: 0;
+
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+
+        padding: 20px 15px;
+
+        margin: 0 auto;
+    }
+
+    .container > img {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 28px;
+
+        line-height: 1.25;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Skills */
+
+    .skills {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin: 25px auto;
+
+        padding: 10px 0;
+    }
+
+    .skill-card {
+        width: 100%;
+
+        padding: 20px 16px;
+
+        min-height: auto;
+    }
+
+    .skills-header {
+        margin-bottom: 20px;
+    }
+
+    .skills-header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .skills-header h1 {
+        font-size: 30px;
+
+        line-height: 1.2;
+    }
+
+    .skills-header p {
+        font-size: 16px;
+    }
+
+    /* Registration */
+
+    .register-container {
+        width: 94%;
+
+        margin: 25px auto;
+
+        padding: 25px 18px;
+    }
+
+    .register-container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .register-container h1 {
+        font-size: 27px;
+    }
+
+    .register-container input,
+    .register-container select {
+        font-size: 16px;
+
+        padding: 14px;
+    }
+
+    .register-container form button {
+        padding: 15px;
+    }
+
+    /* Success */
+
+    .success-container {
+        width: 94%;
+
+        margin: 30px auto;
+
+        padding: 30px 18px;
+    }
+
+    .success-container img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .success-container h1 {
+        font-size: 27px;
+    }
+
+    /* Payment */
+
+    .payment-card {
+        padding: 18px 15px;
+    }
+
+    .account-number {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .account-number span {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .account-number button {
+        width: 100%;
+    }
+
+    /* Founder */
+
+    .founder {
+        margin-top: 35px;
+
+        padding: 25px 15px;
+    }
+
+    /* Footer */
+
+    .site-footer {
+        margin-top: 40px;
+
+        padding: 35px 18px 20px;
+    }
+
     .footer-content {
         flex-direction: column;
+
+        gap: 25px;
+
         text-align: center;
     }
 
@@ -382,127 +837,78 @@ footer strong {
         text-align: center;
     }
 
+    .footer-bottom {
+        margin-top: 25px;
+    }
 }
 
-.success-container {
-    width: 90%;
-    max-width: 550px;
-    margin: 80px auto;
-    padding: 40px 30px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    box-sizing: border-box;
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .container > img {
+        width: 150px;
+        height: 150px;
+    }h1 {
+        font-size: 24px;
+    }
+
+    .skills-header h1 {
+        font-size: 26px;
+    }
+
+    .skills-header img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .skill-card {
+        padding: 18px 14px;
+    }
+
+    .register-container {
+        width: 96%;
+
+        padding: 22px 14px;
+    }
+
+    .register-container h1 {
+        font-size: 24px;
+    }
+
+    .success-container {
+        width: 96%;
+
+        padding: 25px 14px;
+    }
 }
 
-.success-container img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
 
-.success-icon {
-    width: 65px;
-    height: 65px;
-    margin: 10px auto 20px;
-    border-radius: 50%;
-    background: #20c997;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    font-weight: bold;
-}
+@media (max-width: 340px) {
 
-.success-container h1 {
-    margin-bottom: 15px;
-}
+    h1 {
+        font-size: 22px;
+    }
 
-.success-container p {
-    line-height: 1.6;
-    margin: 8px 0;
-}
-.registration-details {
-    margin: 25px 0;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.08);
-    text-align: left;
-}
+    .container > img {
+        width: 135px;
+        height: 135px;
+    }
 
-.registration-details p {
-    margin: 10px 0;
-}
+    .skill-card h2 {
+        font-size: 19px;
+    }
 
-.payment-btn {
-    display: inline-block;
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    background: linear-gradient(135deg, #9b4dff, #6a00ff);
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 16px;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-.register-container small {
-    display: block;
-    margin-top: -12px;
-    margin-bottom: 18px;
-    font-size: 12px;
-    line-height: 1.5;
-    opacity: 0.75;
-}
-
-.payment-card {
-    margin-top: 25px;
-    padding: 22px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.08);
-    text-align: left;
-}
-
-.payment-card p {
-    margin: 12px 0;
-}
-
-.account-number {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 8px 0 20px;
-}
-
-.account-number span {
-    flex: 1;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.account-number button {
-    padding: 12px 16px;
-    border: none;
-    border-radius: 10px;
-    background: #6a00ff;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.payment-note {
-    font-size: 13px;
-    line-height: 1.5;
-    opacity: 0.8;
+    .register-container {
+        padding: 18px 12px;
+    }
 }
