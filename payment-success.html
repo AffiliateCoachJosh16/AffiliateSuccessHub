@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Submitted - Affiliate Success Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="success-container">
+
+        <img src="images/logo.png" alt="Affiliate Success Hub Logo">
+
+        <div class="success-icon">✓</div>
+
+        <h1>Payment Submitted!</h1>
+
+        <p>
+            Thank you, <strong id="paymentStudent"></strong>.
+        </p>
+
+        <div class="registration-details">
+
+            <p>
+                <strong>Skill:</strong>
+                <span id="paymentSkill"></span>
+            </p>
+
+            <p>
+                <strong>Transaction Reference:</strong>
+                <span id="transactionReference"></span>
+            </p>
+
+        </div>
+
+        <p>
+            Your payment proof has been submitted successfully.
+            Our team will verify your payment and contact you on WhatsApp.
+        </p>
+
+        <p>
+            <strong>Status: Payment Verification Pending</strong>
+        </p>
+
+        <a href="index.html" class="register-btn">
+            BACK TO HOME
+        </a>
+
+    </div>
+
+
+    <script>
+
+        const name = localStorage.getItem("studentName");
+        const skill = localStorage.getItem("studentSkill");
+        const transactionId =
+            localStorage.getItem("paymentTransactionId");
+
+        document.getElementById("paymentStudent").textContent =
+            name || "Student";
+
+        document.getElementById("paymentSkill").textContent =
+            skill || "Not selected";
+
+        document.getElementById("transactionReference").textContent =
+            transactionId || "Not provided";
+
+    </script>
+
+</body>
+
+</html>

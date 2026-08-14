@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Success Hub - Register</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a1b9a;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            box-sizing: border-box;
+            border-radius: 7px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            background: #6a1b9a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #4a126b;
+        }
+
+        #price {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #6a1b9a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Affiliate Success Hub</h1>
+
+    <form id="registrationForm">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+
+        <label for="phone">WhatsApp Number</label>
+        <input type="tel" id="phone" required>
+
+        <label for="skill">Select a Skill</label>
+
+        <select id="skill" required>
+            <option value="">Choose a skill</option>
+            <option value="Affiliate Marketing">Affiliate Marketing</option>
+            <option value="Canva Design + eBook">Canva Design + eBook</option>
+            <option value="AI Video Creation">AI Video Creation</option>
+            <option value="Coding (Python)">Coding (Python)</option>
+            <option value="Ghostwriting">Ghostwriting</option>
+            <option value="Social Media Management">Social Media Management</option>
+            <option value="Video Editing">Video Editing</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Female Cyber Friends">Female Cyber Friends</option>
+            <option value="Male Cyber Friends">Male Cyber Friends</option>
+        </select>
+
+        <div id="price">Select a skill to see the price</div>
+
+        <button type="submit">REGISTER NOW</button>
+
+    </form>
+
+</div>
+
+<script>
+
+const prices = {
+    "Affiliate Marketing": "₦5,000",
+    "Canva Design + eBook": "₦5,000",
+    "AI Video Creation": "₦5,000",
+    "Coding (Python)": "₦7,000",
+    "Ghostwriting": "₦12,000",
+    "Social Media Management": "₦5,000",
+    "Video Editing": "₦7,000",
+    "Graphic Design": "₦7,000",
+    "Female Cyber Friends": "₦5,000",
+    "Male Cyber Friends": "₦5,000"
+};
+
+const skillSelect = document.getElementById("skill");
+const priceDisplay = document.getElementById("price");
+
+skillSelect.addEventListener("change", function () {
+
+    const selectedSkill = this.value;
+
+    if (selectedSkill && prices[selectedSkill]) {
+        priceDisplay.textContent =
+            "Course Fee: " + prices[selectedSkill];
+    } else {
+        priceDisplay.textContent =
+            "Select a skill to see the price";
+    }
+
+});
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const selectedSkill = document.getElementById("skill").value;
+    const price = prices[selectedSkill];
+
+    localStorage.setItem("studentName", name);
+    localStorage.setItem("studentPhone", phone);
+    localStorage.setItem("studentSkill", selectedSkill);
+    localStorage.setItem("studentPrice", price);
+
+    const formData = new URLSearchParams();
+
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("skill", selectedSkill);
+    formData.append("price", price);
+
+    fetch("https://script.google.com/macros/s/AKfycbwIZxzpQbi4eOv0U217PkgjY2GsphCPdiXuOuo7GC364zNyA3UFtpzgRWvS-eGa1bqI/exec", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+    })
+    .then(function() {
+        window.location.href = "payment.html";
+    })
+    .catch(function(error) {
+        console.log(error);
+        window.location.href = "payment.html";
+    });
+
+});
+
+</script>

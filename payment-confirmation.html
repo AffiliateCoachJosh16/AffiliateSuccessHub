@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Confirmation - Affiliate Success Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <img src="images/logo.png" alt="Affiliate Success Hub Logo">
+
+        <h1>Payment Confirmation</h1>
+
+        <p>
+            Please provide your payment details so we can verify your payment.
+        </p>
+
+        <form onsubmit="submitPayment(event)">
+
+            <label for="paymentName">Full Name</label>
+            <input
+                type="text"
+                id="paymentName"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="paymentPhone">WhatsApp Number</label>
+            <input
+                type="tel"
+                id="paymentPhone"
+                placeholder="Enter your WhatsApp number"
+                required
+            >
+
+            <label for="paymentSkill">Skill</label>
+            <input
+                type="text"
+                id="paymentSkill"
+                readonly
+            >
+
+            <label for="transactionId">
+    Payment Reference / Transaction ID
+</label>
+
+<input
+    type="text"
+    id="transactionId"
+    placeholder="Enter reference if available"
+>
+
+<small>
+    You can find this on your payment receipt or transaction history.
+    If you cannot find it, you can leave this blank.
+</small>
+            >
+
+    <label for="paymentProof">
+    Payment Screenshot / Proof
+</label>
+
+<small>
+    Upload a clear screenshot showing your successful payment.
+</small>
+
+<input
+    type="file"
+    id="paymentProof"
+    accept="image/*"
+    required
+>
+            <button type="submit">
+                SUBMIT PAYMENT
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        const name = localStorage.getItem("studentName");
+        const phone = localStorage.getItem("studentPhone");
+        const skill = localStorage.getItem("studentSkill");
+
+        document.getElementById("paymentName").value = name || "";
+        document.getElementById("paymentPhone").value = phone || "";
+        document.getElementById("paymentSkill").value = skill || "";
+
+
+        function submitPayment(event) {
+
+            event.preventDefault();
+
+            localStorage.setItem(
+                "paymentTransactionId",
+                document.getElementById("transactionId").value
+            );
+
+            window.location.href = "payment-success.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

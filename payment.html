@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Affiliate Success Hub</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a1b9a;
+        }
+
+        .payment-box {
+            background: #f7effb;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .payment-box p {
+            margin: 12px 0;
+        }
+
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6a1b9a;
+        }
+
+        .whatsapp {
+            display: block;
+            text-align: center;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Complete Your Payment</h1>
+
+    <p id="greeting"></p>
+
+    <div class="payment-box">
+
+        <p><strong>Selected Skill:</strong></p>
+        <p id="skill"></p>
+
+        <p><strong>Course Fee:</strong></p>
+        <p class="amount" id="price"></p>
+
+        <hr>
+
+        <p><strong>Payment Platform:</strong> PalmPay</p>
+
+        <p><strong>Account Name:</strong><br>
+        Joshua Chidalu Ikwuemeka</p>
+
+        <p><strong>Account Number:</strong><br>
+        9164482995</p>
+
+    </div>
+
+    <a id="whatsappButton" class="whatsapp" href="#" target="_blank">
+    📲 SEND PROOF OF PAYMENT
+</a>
+
+<p style="text-align:center; margin-top:15px; color:#666;">
+    After making payment, please send your proof of payment to
+    <strong>08120839005 on WHATSAPP</strong>.
+    
+</p>
+
+</div>
+
+<script>
+
+const name = localStorage.getItem("studentName");
+const skill = localStorage.getItem("studentSkill");
+const price = localStorage.getItem("studentPrice");
+
+document.getElementById("greeting").textContent =
+    "Hello " + (name || "Student") + ", please complete your payment below.";
+
+document.getElementById("skill").textContent =
+    skill || "Not selected";
+
+document.getElementById("price").textContent =
+    price || "₦0";
+
+const message =
+    "Hello Affiliate Success Hub,%0A%0A" +
+    "I have made payment for my registration.%0A%0A" +
+    "Name: " + encodeURIComponent(name || "") + "%0A" +
+    "Skill: " + encodeURIComponent(skill || "") + "%0A" +
+    "Amount: " + encodeURIComponent(price || "") + "%0A%0A" +
+    "I am sending my proof of payment.";
+
+document.getElementById("whatsappButton").href =
+    "https://wa.me/2348120839005?text=" + message;
+
+</script>
+
+</body>
+</html>
