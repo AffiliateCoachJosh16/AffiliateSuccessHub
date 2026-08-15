@@ -912,3 +912,18 @@ footer strong {
         padding: 18px 12px;
     }
 }
+/* GET STARTED BUTTON */
+.container .register-btn {
+    display: inline-block;
+    padding: 16px 42px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+    min-width: 180px;
+    box-shadow: 0 0 20px rgba(155, 77, 255, 0.7);
+}
+
+.container .register-btn:hover {
+    transform: scale(1.06);
+}
